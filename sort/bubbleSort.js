@@ -14,4 +14,4 @@ const bubbleSort = (arr) => {
   return arr
 }
 
-console.log(`冒泡排序\n[${arr}]的结果为${bubbleSort(arr)}`)
+console.log(`冒泡排序 \n [${arr}]的结果为${bubbleSort(arr)} \n 时间复杂度 O(n2) \n 空间复杂度 O(1)`)

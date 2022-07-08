@@ -17,4 +17,4 @@ const selectionSort = (arr) => {
   return arr
 }
 
-console.log(`选择排序\n[${arr}]的结果为${selectionSort(arr)}`)
+console.log(`选择排序 \n [${arr}]的结果为${selectionSort(arr)} \n 时间复杂度 O(n2) \n 空间复杂度 O(1)`)
