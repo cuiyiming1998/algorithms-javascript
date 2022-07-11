@@ -1,0 +1,26 @@
+{
+  "name": "algorithms-javascript",
+  "version": "1.0.0",
+  "description": "一些算法的简单实现",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuiyiming1998/algorithms-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cuiyiming1998/algorithms-javascript/issues"
+  },
+  "homepage": "https://github.com/cuiyiming1998/algorithms-javascript#readme",
+  "devDependencies": {
+    "@vitest/ui": "^0.18.0",
+    "lodash-es": "^4.17.21",
+    "vitest": "^0.18.0"
+  }
+}
