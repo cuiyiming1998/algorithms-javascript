@@ -1,0 +1,37 @@
+/*
+ * @lc app=leetcode.cn id=36 lang=typescript
+ *
+ * [36] 有效的数独
+ */
+
+// @lc code=start
+function isValidSudoku(board: string[][]): boolean {
+  // 思路:
+  // 使用数组记录每一行每一列和每一个九宫格中, 每个数字出现的次数
+  const rows: number[][] = new Array(9).fill(0).map(() => new Array(9).fill(0))
+  const columns: number[][] = new Array(9)
+    .fill(0)
+    .map(() => new Array(9).fill(0))
+  const subboxes: number[][][] = new Array(3)
+    .fill(0)
+    .map(() => new Array(3).fill(0).map(() => new Array(9).fill(0)))
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      const num = board[i][j]
+      if ('.' !== num) {
+        const index: number = Number(num) - 1
+        rows[i][index] ++
+        columns[j][index] ++
+        subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index] ++
+        let row: number = rows[i][index]
+        let col: number = columns[j][index]
+        let subbox: number = subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]
+        if (row > 1 || col > 1 || subbox > 1) {
+          return false
+        }
+      }
+    }
+  }
+  return true
+}
+// @lc code=end
