@@ -7,7 +7,10 @@
 // @lc code=start
 function isValidSudoku(board: string[][]): boolean {
   // 思路:
-  // 使用数组记录每一行每一列和每一个九宫格中, 每个数字出现的次数
+  // 使用map记录每一行每一列和每一个九宫格中, 每个数字出现的次数
+  // 由于值都为数字 可以用数组来记录
+  // 每一个数字进来, 对应的行和列 下标就为num - 1
+  // 最后判断行和列下标的值 是否 > 1
   const rows: number[][] = new Array(9).fill(0).map(() => new Array(9).fill(0))
   const columns: number[][] = new Array(9)
     .fill(0)
