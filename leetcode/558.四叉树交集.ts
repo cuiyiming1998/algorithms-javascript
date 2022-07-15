@@ -26,6 +26,7 @@
  */
 
 function intersect(t1: Node | null, t2: Node | null): Node | null {
+  // 抄的题解
   if (t1.isLeaf && t2.isLeaf) {
     if (t1.val) return t1
     else if (t2.val) return t2
