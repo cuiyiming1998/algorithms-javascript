@@ -21,10 +21,32 @@
  * }
  */
 
-
 // @ts-nocheck
 function connect(root: Node | null): Node | null {
+  if (!root) {
+    return root
+  }
+  let queue = [root]
 
-};
+  while (queue.length > 0) {
+    let size = queue.length
+    while (size > 0) {
+      size--
+      let offer = queue.shift()
+
+      if (offer) {
+        if (size === 0) {
+          offer.next = null
+        } else {
+          offer.next = queue[0]
+        }
+      }
+
+      if (offer && offer.left) queue.push(offer.left)
+      if (offer && offer.right) queue.push(offer.right)
+    }
+  }
+
+  return root
+}
 // @lc code=end
-
