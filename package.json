@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "一些算法的简单实现",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "vitest",
+    "test": "vitest daily-js/",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage"
   },
@@ -19,8 +20,12 @@
   },
   "homepage": "https://github.com/cuiyiming1998/algorithms-javascript#readme",
   "devDependencies": {
+    "@types/node": "^18.8.5",
     "@vitest/ui": "^0.18.0",
     "lodash-es": "^4.17.21",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "~4.2.3",
     "vitest": "^0.18.0"
   }
 }

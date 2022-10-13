@@ -1,4 +1,5 @@
-import { PromiseState } from "./promiseState"
+import { isFunc } from '../shared/index.js'
+import { PromiseState } from './promiseState.js'
 
 /**
  * description
@@ -6,46 +7,80 @@ import { PromiseState } from "./promiseState"
  *
  */
 
-class myPromise {
-	private promiseState: PromiseState
-  private promiseResult: any
+export class myPromise {
+	private promiseState: PromiseState = PromiseState.PENDING
+	private promiseResult: any
+
+	private setPromiseResult(value: any) {
+		this.promiseResult = value
+	}
+
+	private setPromiseState(state: PromiseState) {
+		this.promiseState = state
+	}
+
+	private isPending() {
+		return PromiseState.PENDING === this.promiseState
+	}
 
 	constructor(fn) {
 		// 1. 初始化value
 		this.initValue()
-		// 2. 初始化this指向
-		this.initThis()
-		// 执行函数
-    fn(this.resolve, this.reject)
+		// 2. 执行函数
+		// 如果函数内部有throw的话 那么相当于reject
+		try {
+			fn(this.resolve, this.reject)
+		} catch (e) {
+			this.reject(e)
+		}
 	}
 
 	initValue() {
-    // 初始化result
-    this.promiseResult = null
-    // 初始化pending状态
-		this.promiseState = PromiseState.PENDING
+		// 初始化result
+		this.setPromiseResult(null)
+		// 初始化pending状态
+		this.setPromiseState(PromiseState.PENDING)
 	}
-	initThis() {
-    this.resolve.bind(this)
-    this.reject.bind(this)
-  }
 
-  resolve(value) {
-    // 1. 修改状态
-    this.promiseState = PromiseState.FULFILLED
-    // 2. 修改result
-    this.promiseResult = value
+	// resolve和reject等方法外部需要调用
+	// 这里直接写成箭头函数 否则会找不到this
+	resolve = (value: any) => {
+		// 如果是Pending状态 再修改
+		if (!this.isPending()) {
+			return
+		}
+		// 1. 修改状态
+		this.setPromiseState(PromiseState.FULFILLED)
+		// 2. 修改result
+		this.setPromiseResult(value)
 
-    console.log('触发了resolve')
-  }
+		console.log(`resolve: ${value}`)
+	}
 
-  reject(reason) {
-    // 1. 修改状态
-    this.promiseState = PromiseState.REJECTED
-    // 2. 修改result
-    this.promiseResult = reason
+	reject = (reason: any) => {
+		if (!this.isPending()) {
+			return
+		}
+		// 1. 修改状态
+		this.setPromiseState(PromiseState.REJECTED)
+		// 2. 修改result
+		this.setPromiseResult(reason)
 
-    console.log('触发了reject')
-  }
+		console.log(`reject: ${reason}`)
+	}
 
+	then(onFulfilled?: any, onRejected?: any) {
+		// 校验两个参数, 应该为function
+		!isFunc(onFulfilled) && (onFulfilled = val => val)
+		!isFunc(onRejected) &&
+			(onRejected = reason => {
+				throw reason
+			})
+
+    if (PromiseState.FULFILLED === this.promiseState) {
+      onFulfilled(this.promiseResult)
+    } else if (PromiseState.REJECTED === this.promiseState) {
+      onRejected(this.promiseResult)
+    }
+	}
 }
