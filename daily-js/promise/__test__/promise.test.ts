@@ -1,5 +1,4 @@
-import { resolve } from 'path'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { myPromise } from '../index'
 
@@ -24,12 +23,46 @@ describe('Promise', () => {
 		expect(a).toBe(1)
 	})
 
-  it('then -> err', () => {
-    let a = 0
-    const promise = new myPromise((resolve, reject) => {
-      reject(1)
-    }).then(res => a = 0, err => a = err)
+	it('then -> err', () => {
+		let a = 0
+		const promise = new myPromise((resolve, reject) => {
+			reject(1)
+		}).then(
+			res => (a = 0),
+			err => (a = err)
+		)
 
-    expect(a).toBe(1)
+		expect(a).toBe(1)
+	})
+
+	it('should change value after 1 sec', () => {
+		let a = 0
+		const promise = new myPromise((resolve, reject) => {
+			vi.useFakeTimers()
+			setTimeout(() => {
+        a = 5
+				resolve(4)
+			}, 1000)
+			vi.runAllTimers()
+		}).then(res => {
+			a = res
+			expect(a).toBe(4)
+		})
+	})
+
+  it('then should be chained', () => {
+    let a = 0
+		const promise = new myPromise((resolve, reject) => {
+      resolve(1)
+		}).then(res => {
+      console.log(res)
+			a = res
+			expect(a).toBe(1)
+      return 2
+		}).then(res => {
+      console.log(res)
+      a = res
+      expect(a).toBe(2)
+    })
   })
 })
