@@ -109,6 +109,7 @@ export class myPromise {
 		// 完成then的链式调用
 		const nextPromise = new myPromise((resolve, reject) => {
 			const p = cb => {
+				// TODO then是个微任务
 				const res = cb(this.promiseResult)
 				if (res instanceof myPromise) {
 					// 如果返回值是一个promise
@@ -125,11 +126,50 @@ export class myPromise {
 			} else if (PromiseState.REJECTED === this.promiseState) {
 				p(onRejected)
 			} else if (PromiseState.PENDING === this.promiseState) {
-				this.onFulFilledCallbacks.push(onFulfilled)
-				this.onRejectedCallbacks.push(onRejected)
+				this.onFulFilledCallbacks.push(p.bind(this, onFulfilled))
+				this.onRejectedCallbacks.push(p.bind(this, onRejected))
 			}
 		})
 		return nextPromise
+	}
+
+	// Promise.all
+	// 如果所有Promise都成 则返回成功结果的数组
+	// 如果有一个失败 返回这个失败的结果
+	// 如果有非promise 则当做成功resolve
+	static all(promises: any[]): myPromise {
+		const res: any[] = []
+		let count: number = 0
+		const len: number = promises.length
+
+		const promise: myPromise = new myPromise((resolve, reject) => {
+			const addData = (index, value) => {
+				res[index] = value
+				count++
+				if (count === len) {
+					// 如果count === len 也就是全部执行完了
+					resolve(res)
+				}
+			}
+			promises.forEach((promise, index) => {
+				if (promise instanceof myPromise) {
+					// 如果是Promise的话, 去执行.then
+					promise.then(
+						res => {
+							addData(index, res)
+						},
+						err => {
+							reject(err)
+						}
+					)
+				} else {
+					// 如果不是promise 则作为resolve
+					addData(index, promise)
+				}
+			})
+		})
+
+		return promise
 	}
 }
 

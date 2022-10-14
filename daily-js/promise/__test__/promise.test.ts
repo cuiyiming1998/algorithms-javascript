@@ -28,8 +28,12 @@ describe('Promise', () => {
 		const promise = new myPromise((resolve, reject) => {
 			reject(1)
 		}).then(
-			res => (a = 0),
-			err => (a = err)
+			res => {
+				a = res
+			},
+			err => {
+				a = err
+			}
 		)
 
 		expect(a).toBe(1)
@@ -40,7 +44,7 @@ describe('Promise', () => {
 		const promise = new myPromise((resolve, reject) => {
 			vi.useFakeTimers()
 			setTimeout(() => {
-        a = 5
+				a = 5
 				resolve(4)
 			}, 1000)
 			vi.runAllTimers()
@@ -50,19 +54,36 @@ describe('Promise', () => {
 		})
 	})
 
-  it('then should be chained', () => {
-    let a = 0
+	it('then should be chained', () => {
+		let a = 0
 		const promise = new myPromise((resolve, reject) => {
-      resolve(1)
-		}).then(res => {
-      console.log(res)
-			a = res
-			expect(a).toBe(1)
-      return 2
-		}).then(res => {
-      console.log(res)
-      a = res
-      expect(a).toBe(2)
-    })
-  })
+			resolve(1)
+		})
+			.then(res => {
+				a = res
+				expect(a).toBe(1)
+				return 2
+			})
+			.then(res => {
+				a = res
+				expect(a).toBe(2)
+			})
+	})
+
+	it('all', () => {
+		let res = []
+
+		let p1 = new myPromise((r, j) => {
+			r(1)
+		})
+		let p2 = new myPromise((r, j) => {
+			r(2)
+		})
+
+		myPromise.all([p1, p2]).then(r => {
+			res = r
+		})
+
+		expect(res).toStrictEqual([1, 2])
+	})
 })
