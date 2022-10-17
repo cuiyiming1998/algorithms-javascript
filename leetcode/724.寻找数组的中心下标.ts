@@ -19,11 +19,11 @@ function pivotIndex(nums: number[]): number {
 
   for (let i = 0; i < nums.length; i ++) {
     if (2 * sum + nums[i] === total) {
-      res = i
+      return i
     }
     sum += nums[i]
   }
-  return res
+  return -1
 };
 // @lc code=end
 
