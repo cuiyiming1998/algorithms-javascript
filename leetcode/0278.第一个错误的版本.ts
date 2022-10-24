@@ -17,9 +17,12 @@ var solution = function (isBadVersion: any) {
   return function (n: number): number {
     let left: number = 1
     let right: number = n
-    while (left < right) {
+
+    while(left < right) {
       let mid = Math.floor(left + (right - left) / 2)
       if (isBadVersion(mid)) {
+        // 因为要找第一个 所以应该从左边找起
+        // 这里要继续往左找
         right = mid
       } else {
         left = mid + 1
