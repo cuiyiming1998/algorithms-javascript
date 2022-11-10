@@ -1,7 +1,7 @@
 {
-  "name": "daily-improvement",
+  "name": "algorithms-javascript",
   "version": "1.0.0",
-  "description": "手写一些经典算法、排序、常用js函数",
+  "description": "手写一些经典算法、排序",
   "main": "index.js",
   "type": "module",
   "scripts": {

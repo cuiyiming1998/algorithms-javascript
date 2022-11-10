@@ -1,6 +1,6 @@
-# Daily Improvement
+# Algorithm Javascript
 
-手写一些经典算法、排序、常用js函数
+手写一些经典算法、排序
 争取做到每天都写一点
 每天进步一点点!
 
@@ -12,9 +12,4 @@
   cd daily-js/*
 
   node --loader ts-node/esm ***.ts
-```
-
-### 测试daily-js
-``` bash
-  pnpm test
 ```
