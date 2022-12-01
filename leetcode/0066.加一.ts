@@ -19,9 +19,7 @@ function plusOne(digits: number[]): number[] {
 
   // 如果到这里还没有return 说明第一位也需要进位 那么需要在数组头补一位
   // 这时返回 10000...
-  let res: number[] = new Array(len + 1).fill(0)
-  res[0] = 1
-  return res
+  return [1, ...digits]
 };
 // @lc code=end
 
