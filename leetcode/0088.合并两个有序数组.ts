@@ -20,16 +20,15 @@ function merge(nums1: number[], m: number, nums2: number[], n: number): void {
   while (p1 >= 0 || p2 >= 0) {
     // 如果一个数组减没了
     if (-1 === p1) {
-      cur = nums2[p2 --]
+      cur = nums2[p2--]
     } else if (-1 === p2) {
-      cur = nums1[p1 --]
+      cur = nums1[p1--]
     } else if (nums1[p1] > nums2[p2]) {
-      cur = nums1[p1 --]
+      cur = nums1[p1--]
     } else {
-      cur = nums2[p2 --]
+      cur = nums2[p2--]
     }
-    nums1[len --] = cur
+    nums1[len--] = cur
   }
-};
+}
 // @lc code=end
-

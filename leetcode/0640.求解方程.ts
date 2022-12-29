@@ -5,8 +5,5 @@
  */
 
 // @lc code=start
-function solveEquation(equation: string): string {
-
-};
+function solveEquation(equation: string): string {}
 // @lc code=end
-

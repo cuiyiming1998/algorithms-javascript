@@ -10,11 +10,10 @@ function singleNumber(nums: number[]): number {
   // 任何数和0异或 结果都等于它本身
   // 任何数和自身异或 结果都等于0
   // 异或运算满足交换律和结合律
-  let res: number = 0
+  let res = 0
   for (const i of nums) {
     res ^= i
   }
   return res
-};
+}
 // @lc code=end
-

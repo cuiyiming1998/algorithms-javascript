@@ -9,7 +9,7 @@ function longestPalindrome(s: string): number {
   // 思路: 抽出所有出现偶数次的字符 然后Len + 2
   // 剩下如果有出现奇数次数的字符 len + 1
   let map = new Map<string, number>()
-  let res: number = 0
+  let res = 0
 
   for (const l of s) {
     let current: number | undefined = map.get(l)
@@ -27,6 +27,5 @@ function longestPalindrome(s: string): number {
   }
 
   return res
-};
+}
 // @lc code=end
-

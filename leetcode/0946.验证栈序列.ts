@@ -8,14 +8,13 @@
 function validateStackSequences(pushed: number[], popped: number[]): boolean {
   let stack: number[] = []
   let len: number = pushed.length
-  for (let i = 0, j = 0; i < len; i ++) {
+  for (let i = 0, j = 0; i < len; i++) {
     stack.push(pushed[i])
     while (stack.length && stack[stack.length - 1] === popped[j]) {
       stack.pop()
-      j ++
+      j++
     }
   }
   return 0 === stack.length
-};
+}
 // @lc code=end
-

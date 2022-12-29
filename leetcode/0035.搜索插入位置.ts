@@ -7,7 +7,7 @@
 // @lc code=start
 function searchInsert(nums: number[], target: number): number {
   // 思路: 二分查找
-  let left: number = 0
+  let left = 0
   let right: number = nums.length - 1
   while (left <= right) {
     const mid = Math.floor(left + (right - left) / 2)
@@ -21,6 +21,5 @@ function searchInsert(nums: number[], target: number): number {
     }
   }
   return left
-};
+}
 // @lc code=end
-

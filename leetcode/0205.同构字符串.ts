@@ -14,7 +14,7 @@ function isIsomorphic(s: string, t: string): boolean {
   const sm = new Map<string, string>()
   const tm = new Map<string, string>()
 
-  for (let i = 0; i < s.length; i ++) {
+  for (let i = 0; i < s.length; i++) {
     const sv = sm.get(s[i])
     const tv = tm.get(t[i])
     if ((sv && sv !== t[i]) || (tv && tv !== s[i])) {
@@ -24,6 +24,5 @@ function isIsomorphic(s: string, t: string): boolean {
     tm.set(t[i], s[i])
   }
   return true
-};
+}
 // @lc code=end
-

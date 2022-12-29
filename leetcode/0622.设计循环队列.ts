@@ -8,51 +8,51 @@
 class MyCircularQueue {
   // 思路: start队头 end队尾
   // start % k   end % K 为实际位置
-  private len: number = 0
-  private start: number = 0
-  private end: number = 0
+  private len = 0
+  private start = 0
+  private end = 0
   private queue: number[] = []
-    constructor(k: number) {
-      this.len = k
-      this.queue.length = k
-    }
+  constructor(k: number) {
+    this.len = k
+    this.queue.length = k
+  }
 
-    enQueue(value: number): boolean {
-      // 在[end % len]处存入值 队尾后移一位
-      if (this.isFull()) {
-        return false
-      }
-      this.queue[this.end % this.len] = value
-      this.end ++
-      return true
+  enQueue(value: number): boolean {
+    // 在[end % len]处存入值 队尾后移一位
+    if (this.isFull()) {
+      return false
     }
+    this.queue[this.end % this.len] = value
+    this.end++
+    return true
+  }
 
-    deQueue(): boolean {
-      // 队头向后移一位
-      if (this.isEmpty()) {
-        return false
-      }
-      this.start ++
-      return true
+  deQueue(): boolean {
+    // 队头向后移一位
+    if (this.isEmpty()) {
+      return false
     }
+    this.start++
+    return true
+  }
 
-    Front(): number {
-      return this.isEmpty() ? -1 : this.queue[this.start % this.len]
-    }
+  Front(): number {
+    return this.isEmpty() ? -1 : this.queue[this.start % this.len]
+  }
 
-    Rear(): number {
-      return this.isEmpty() ? -1 : this.queue[(this.end - 1) % this.len]
-    }
+  Rear(): number {
+    return this.isEmpty() ? -1 : this.queue[(this.end - 1) % this.len]
+  }
 
-    isEmpty(): boolean {
-      // end === start 即为空
-      return this.end === this.start
-    }
+  isEmpty(): boolean {
+    // end === start 即为空
+    return this.end === this.start
+  }
 
-    isFull(): boolean {
-      // end - start === len 即为队列满
-      return (this.len === this.end - this.start)
-    }
+  isFull(): boolean {
+    // end - start === len 即为队列满
+    return this.len === this.end - this.start
+  }
 }
 
 /**
@@ -66,4 +66,3 @@ class MyCircularQueue {
  * var param_6 = obj.isFull()
  */
 // @lc code=end
-

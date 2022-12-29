@@ -6,14 +6,14 @@
 
 // @lc code=start
 function fractionAddition(expression: string): string {
-  let denominator: number = 0 // 分子
-  let numerator: number = 1 // 分母
-  let index: number = 0
+  let denominator = 0 // 分子
+  let numerator = 1 // 分母
+  let index = 0
   let len: number = expression.length
 
   while (index < len) {
-    let _denominator: number = 0
-    let sign: number = 1 // 符号
+    let _denominator = 0
+    let sign = 1 // 符号
     if ('-' === expression[index] || '+' === expression[index]) {
       sign = '-' === expression[index] ? -1 : 1
       index++
@@ -26,7 +26,7 @@ function fractionAddition(expression: string): string {
     _denominator = _denominator * sign
     index++
 
-    let _numerator: number = 0
+    let _numerator = 0
     while (index < len && isDigit(expression[index])) {
       _numerator =
         _numerator * 10 + expression[index].charCodeAt(0) - '0'.charCodeAt(0)

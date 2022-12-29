@@ -8,7 +8,7 @@
 function sortedSquares(nums: number[]): number[] {
   // 思路: 双指针
   // 头尾取平方, 比较大小, 放进新数组
-  let left: number = 0
+  let left = 0
   let right: number = nums.length - 1
   let res: number[] = []
 
@@ -17,14 +17,13 @@ function sortedSquares(nums: number[]): number[] {
     const rightNum = nums[right] ** 2
     if (leftNum > rightNum) {
       res.unshift(leftNum)
-      left ++
+      left++
     } else {
       res.unshift(rightNum)
-      right --
+      right--
     }
   }
 
   return res
-};
+}
 // @lc code=end
-

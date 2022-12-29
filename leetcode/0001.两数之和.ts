@@ -7,7 +7,7 @@
 // @lc code=start
 function twoSum(nums: number[], target: number): number[] {
   let targetMap = new Map()
-  for (let i = 0; i < nums.length; i ++) {
+  for (let i = 0; i < nums.length; i++) {
     let current = nums[i]
     let targetNum = target - current
     let targetIndex = targetMap.get(targetNum)
@@ -18,6 +18,5 @@ function twoSum(nums: number[], target: number): number[] {
     }
   }
   return []
-};
+}
 // @lc code=end
-

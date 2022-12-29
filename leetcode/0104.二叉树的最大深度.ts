@@ -27,6 +27,5 @@ function maxDepth(root: TreeNode | null): number {
   const left: number = maxDepth(root.left)
   const right: number = maxDepth(root.right)
   return Math.max(left, right) + 1
-};
+}
 // @lc code=end
-

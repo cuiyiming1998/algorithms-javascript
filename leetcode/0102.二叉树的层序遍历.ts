@@ -29,7 +29,7 @@ function levelOrder(root: TreeNode | null): number[][] {
   }
   let queue: TreeNode[] = []
   queue.push(root)
-  while(queue.length !== 0) {
+  while (queue.length !== 0) {
     res.push([]) // 新的一层
     const len = queue.length
     for (let i = 0; i < len; i++) {
@@ -45,6 +45,5 @@ function levelOrder(root: TreeNode | null): number[][] {
   }
 
   return res
-};
+}
 // @lc code=end
-

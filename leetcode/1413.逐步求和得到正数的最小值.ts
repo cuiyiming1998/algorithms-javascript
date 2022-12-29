@@ -9,13 +9,12 @@ function minStartValue(nums: number[]): number {
   // 思路:
   // startValue + sum >= 1
   // sum >= 1 - startValue
-  let startValue: number = 0
-  let sum: number = 0
+  let startValue = 0
+  let sum = 0
   for (const num of nums) {
     sum += num
     startValue = Math.min(startValue, sum)
   }
   return 1 - startValue
-};
+}
 // @lc code=end
-

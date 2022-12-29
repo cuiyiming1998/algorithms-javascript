@@ -20,7 +20,7 @@ function updateMatrix(mat: number[][]): number[][] {
   // 寻找0旁边的1
   while (queue.length) {
     let size: number = queue.length
-    for (let k = 0; k < size; k ++) {
+    for (let k = 0; k < size; k++) {
       let arr = queue.shift()
       if (arr) {
         let [i, j] = arr

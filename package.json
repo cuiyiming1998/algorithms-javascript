@@ -7,7 +7,10 @@
   "scripts": {
     "test": "vitest daily-js/",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "commit": "git add . && cz-customizable",
+    "lint:leetcode": "eslint ./leetcode --ext .js,.ts,.jsx,.tsx --fix --quiet",
+    "lint:all": "eslint . --ext .js,.ts,.jsx,.tsx --fix --quiet"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,25 @@
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
     "typescript": "~4.2.3",
-    "vitest": "^0.18.0"
+    "vitest": "^0.18.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.1",
+    "commitlint": "^17.3.0",
+    "cz-customizable": "^7.0.0",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-git-commit-emoji": "^1.0.0",
+    "husky": "^8.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": "./.cz-config.cjs"
+    }
   }
 }

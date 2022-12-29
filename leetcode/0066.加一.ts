@@ -7,7 +7,7 @@
 // @lc code=start
 function plusOne(digits: number[]): number[] {
   const len: number = digits.length
-  for (let i = len - 1; i >= 0; i --) {
+  for (let i = len - 1; i >= 0; i--) {
     // 数组最后一个元素++ 剩下的处理进位的情况
     digits[i] += 1
     digits[i] %= 10
@@ -20,6 +20,5 @@ function plusOne(digits: number[]): number[] {
   // 如果到这里还没有return 说明第一位也需要进位 那么需要在数组头补一位
   // 这时返回 10000...
   return [1, ...digits]
-};
+}
 // @lc code=end
-

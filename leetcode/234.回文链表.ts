@@ -27,21 +27,20 @@ function isPalindrome(head: ListNode | null): boolean {
     return true
   }
   let node: ListNode = head
-  while(null !== node) {
+  while (null !== node) {
     values.push(node.val)
     node = node.next
   }
-  let left: number = 0
+  let left = 0
   let right: number = values.length - 1
   while (left < right) {
     if (values[left] === values[right]) {
-      left ++
-      right --
+      left++
+      right--
     } else {
       return false
     }
   }
   return true
-};
+}
 // @lc code=end
-

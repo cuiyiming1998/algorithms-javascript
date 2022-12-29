@@ -35,5 +35,5 @@ function preorder(root: Node | null): number[] {
   helper(root)
 
   return res
-};
+}
 // @lc code=end

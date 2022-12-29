@@ -1,4 +1,3 @@
-
 /**
  * @description: 找一个基准值 比他小的放左侧 比他大的放右侧
  */
@@ -10,7 +9,7 @@ export const quickSort: Sort = {
   timeMaxDesc: '每次都取到最大或最小',
   timeMin: 'O(nlogn)',
   timeMinDesc: '平均',
-  fn: (arr: number[]) =>  {
+  fn: (arr: number[]) => {
     if (arr.length < 1) {
       return arr
     }
@@ -31,4 +30,3 @@ export const quickSort: Sort = {
     return quickSort.fn(left).concat([prior], quickSort.fn(right))
   }
 }
-

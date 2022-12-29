@@ -18,7 +18,10 @@
  */
 
 // @ts-nocheck
-function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+function getIntersectionNode(
+  headA: ListNode | null,
+  headB: ListNode | null
+): ListNode | null {
   // 思路: 使用set
   // 循环A 存入set
   // 循环B 看是否存在set中
@@ -36,6 +39,5 @@ function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): Li
     b = b.next
   }
   return null
-};
+}
 // @lc code=end
-

@@ -8,11 +8,11 @@
 function nearestValidPoint(x: number, y: number, points: number[][]): number {
   // 思路: 按照题意模拟
 
-  let res: number = -1
-  let distance: number = Infinity
+  let res = -1
+  let distance = Infinity
   let len: number = points.length
 
-  for (let i = 0; i < len; i ++) {
+  for (let i = 0; i < len; i++) {
     const current: number[] = points[i]
     const currentX: number = current[0]
     const currentY: number = current[1]
@@ -31,6 +31,5 @@ function nearestValidPoint(x: number, y: number, points: number[][]): number {
     }
   }
   return res
-};
+}
 // @lc code=end
-

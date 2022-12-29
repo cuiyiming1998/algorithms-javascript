@@ -17,12 +17,12 @@
 // @ts-nocheck
 function guessNumber(n: number): number {
   // 思路: 二分
-	let left: number = 1
-	let right: number = n
+  let left = 1
+  let right: number = n
 
-	while (left < right) {
-		let mid: number = Math.floor(left + (right - left) / 2)
-    let res: number = guess(mid) 
+  while (left < right) {
+    let mid: number = Math.floor(left + (right - left) / 2)
+    let res: number = guess(mid)
     if (0 === res) {
       return mid
     }
@@ -31,7 +31,7 @@ function guessNumber(n: number): number {
     } else if (1 === res) {
       left = mid + 1
     }
-	}
+  }
 
   return left
 }

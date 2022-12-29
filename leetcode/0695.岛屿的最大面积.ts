@@ -7,7 +7,7 @@
 // @lc code=start
 function maxAreaOfIsland(grid: number[][]): number {
   // 思路: dfs或者bfs
-  let s: number = 0
+  let s = 0
 
   const dfs = (x: number, y: number): number => {
     if (!grid[x] || !grid[x][y]) {
@@ -24,14 +24,13 @@ function maxAreaOfIsland(grid: number[][]): number {
     return sum
   }
 
-  for (let i = 0; i < grid.length; i ++) {
-    for (let j = 0; j < grid[i].length; j ++) {
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[i].length; j++) {
       if (grid[i][j]) {
         s = Math.max(s, dfs(i, j))
       }
     }
   }
   return s
-};
+}
 // @lc code=end
-

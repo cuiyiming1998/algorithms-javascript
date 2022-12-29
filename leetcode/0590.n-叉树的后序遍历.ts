@@ -27,16 +27,14 @@ function postorder(root: Node | null): number[] {
     }
 
     if (root.children.length) {
-      root.children.map(node => {
+      root.children.map((node) => {
         order(node)
       })
     }
     res.push(root.val)
-
   }
   order(root)
 
   return res
-};
+}
 // @lc code=end
-

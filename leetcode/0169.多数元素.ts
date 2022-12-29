@@ -11,7 +11,7 @@ function majorityElement(nums: number[]): number {
   // 如果发现大于nums / 2 直接返回
   let map = new Map<number, number>()
   const count: number = nums.length / 2
-  let res: number = 0
+  let res = 0
 
   if (nums.length < 2) {
     return nums[0]
@@ -30,6 +30,5 @@ function majorityElement(nums: number[]): number {
     }
   }
   return res
-};
+}
 // @lc code=end
-

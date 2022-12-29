@@ -20,8 +20,5 @@
  */
 
 // @ts-nocheck
-function printTree(root: TreeNode | null): string[][] {
-
-};
+function printTree(root: TreeNode | null): string[][] {}
 // @lc code=end
-

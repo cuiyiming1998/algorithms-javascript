@@ -31,6 +31,5 @@ const helper = (node: TreeNode, min: number, max: number): boolean => {
 }
 function isValidBST(root: TreeNode | null): boolean {
   return helper(root, -Infinity, Infinity)
-};
+}
 // @lc code=end
-

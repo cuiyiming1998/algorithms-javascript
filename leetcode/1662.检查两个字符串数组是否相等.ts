@@ -14,8 +14,11 @@ function arrayStringsAreEqual(word1: string[], word2: string[]): boolean {
 
   // i, j 分别为word1, word2的位置
   // p, q 分别为word1[i], word2[j]的位置
-  let i =0, j = 0, p = 0, q = 0
-  while(i < m && j < n) {
+  let i = 0,
+    j = 0,
+    p = 0,
+    q = 0
+  while (i < m && j < n) {
     if (word1[i][p] !== word2[j][q]) {
       return false
     }
@@ -23,14 +26,13 @@ function arrayStringsAreEqual(word1: string[], word2: string[]): boolean {
     q += 1
     if (p === word1[i].length) {
       p = 0
-      i ++
+      i++
     }
     if (q === word2[j].length) {
       q = 0
-      j ++
+      j++
     }
   }
   return i === m && j === n
-};
+}
 // @lc code=end
-

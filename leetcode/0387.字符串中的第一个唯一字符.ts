@@ -11,8 +11,8 @@ function firstUniqChar(s: string): number {
   // 如果出现过则更新为false状态代表出现过
   // 遍历map取第一个不为false的value即可
   let map = new Map<string, boolean | number>()
-  let res: number = -1
-  for (let i = 0; i < s.length; i ++) {
+  let res = -1
+  for (let i = 0; i < s.length; i++) {
     if ('undefined' === typeof map.get(s[i])) {
       map.set(s[i], i)
     } else {
@@ -27,6 +27,5 @@ function firstUniqChar(s: string): number {
   }
 
   return res
-};
+}
 // @lc code=end
-

@@ -12,19 +12,18 @@ function twoSum(numbers: number[], target: number): number[] {
   // 2. 双指针
   // left和right
   const len: number = numbers.length
-  let left: number = 0
+  let left = 0
   let right: number = len
   while (left <= right) {
     let sum: number = numbers[left] + numbers[right]
     if (sum === target) {
       return [left + 1, right + 1]
     } else if (sum < target) {
-      left ++
+      left++
     } else {
-      right --
+      right--
     }
   }
   return [-1, -1]
-};
+}
 // @lc code=end
-

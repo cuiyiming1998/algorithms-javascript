@@ -18,7 +18,10 @@
  */
 
 // @ts-nocheck
-function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
+function mergeTwoLists(
+  list1: ListNode | null,
+  list2: ListNode | null
+): ListNode | null {
   if (!list1) {
     return list2
   } else if (!list2) {
@@ -30,6 +33,5 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
     list2.next = mergeTwoLists(list1, list2.next)
     return list2
   }
-};
+}
 // @lc code=end
-

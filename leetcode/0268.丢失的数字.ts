@@ -6,22 +6,22 @@
 
 // @lc code=start
 function missingNumber(nums: number[]): number {
-	// 思路: set
+  // 思路: set
 
-	let set = new Set<number>()
-	const n: number = nums.length
-	for (let i = 0; i < n; i++) {
-		set.add(nums[i])
-	}
+  let set = new Set<number>()
+  const n: number = nums.length
+  for (let i = 0; i < n; i++) {
+    set.add(nums[i])
+  }
 
-	let res: number = -1
-	for (let i = 0; i <= n; i++) {
-		if (!set.has(i)) {
-			res = i
-			break
-		}
-	}
+  let res = -1
+  for (let i = 0; i <= n; i++) {
+    if (!set.has(i)) {
+      res = i
+      break
+    }
+  }
 
-	return res
+  return res
 }
 // @lc code=end

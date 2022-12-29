@@ -10,21 +10,20 @@ function reverseWords(s: string): string {
   let wordsArr: string[] = s.split(' ')
 
   const reverse = (arr: string[]): string[] => {
-    let left: number = 0
+    let left = 0
     let right: number = arr.length - 1
     while (left <= right) {
-      [arr[left], arr[right]] = [arr[right], arr[left]]
-      left ++
-      right --
+      ;[arr[left], arr[right]] = [arr[right], arr[left]]
+      left++
+      right--
     }
     return arr
   }
 
-  let res = wordsArr.map(item => {
+  let res = wordsArr.map((item) => {
     return reverse(item.split('')).join('')
   })
 
   return res.join(' ')
-};
+}
 // @lc code=end
-

@@ -12,13 +12,13 @@
  * };
  */
 
-var solution = function (isBadVersion: any) {
+let solution = function (isBadVersion: any) {
   // 思路: 二分查找
   return function (n: number): number {
-    let left: number = 1
+    let left = 1
     let right: number = n
 
-    while(left < right) {
+    while (left < right) {
       let mid = Math.floor(left + (right - left) / 2)
       if (isBadVersion(mid)) {
         // 因为要找第一个 所以应该从左边找起

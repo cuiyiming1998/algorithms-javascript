@@ -5,8 +5,5 @@
  */
 
 // @lc code=start
-function orderlyQueue(s: string, k: number): string {
-
-};
+function orderlyQueue(s: string, k: number): string {}
 // @lc code=end
-

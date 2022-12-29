@@ -13,13 +13,12 @@ function maxArea(height: number[]): number {
   let s = Math.min(height[left], height[right]) * (right - left)
   while (left < right) {
     if (height[left] < height[right]) {
-      left ++
+      left++
     } else {
-      right --
+      right--
     }
     s = Math.max(s, Math.min(height[left], height[right]) * (right - left))
   }
   return s
-};
+}
 // @lc code=end
-

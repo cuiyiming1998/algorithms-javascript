@@ -22,9 +22,9 @@ function arraySign(nums: number[]): number {
   // 思路:
   // 如果数组中存在0 那么结果就是0
   // 数组中遇到一个-1 就把结果取反
-  let res: boolean = false
+  let res = false
 
-  for (let i = 0; i < nums.length; i ++) {
+  for (let i = 0; i < nums.length; i++) {
     let n = nums[i]
     if (!n) {
       return 0
@@ -35,6 +35,5 @@ function arraySign(nums: number[]): number {
   }
 
   return res ? -1 : 1
-};
+}
 // @lc code=end
-

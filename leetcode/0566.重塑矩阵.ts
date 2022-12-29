@@ -11,15 +11,15 @@ function matrixReshape(mat: number[][], r: number, c: number): number[][] {
   // i = Math.floor(x / n)
   // j = x % n
   // n 为列数 即 mat[0].length
-	let m: number = mat.length
-	let n: number = mat[0].length
+  let m: number = mat.length
+  let n: number = mat[0].length
 
-	if (m * n !== r * c) {
-		return mat
-	}
+  if (m * n !== r * c) {
+    return mat
+  }
 
-	let res: number[][] = new Array(r).fill(0).map(() => new Array(c).fill(0))
-  for (let i = 0; i < m * n; ++ i) {
+  let res: number[][] = new Array(r).fill(0).map(() => new Array(c).fill(0))
+  for (let i = 0; i < m * n; ++i) {
     res[Math.floor(i / c)][i % c] = mat[Math.floor(i / n)][i % n]
   }
   return res

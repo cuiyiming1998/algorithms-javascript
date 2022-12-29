@@ -22,12 +22,11 @@ function intersect(nums1: number[], nums2: number[]): number[] {
   for (const num of nums2) {
     let cur: number | undefined = map.get(num)
     if (cur) {
-      cur --
+      cur--
       res.push(num)
       map.set(num, cur)
     }
   }
   return res
-};
+}
 // @lc code=end
-

@@ -4,5 +4,5 @@ import path from 'path'
 export default defineConfig({
   test: {
     globals: true
-  },
+  }
 })

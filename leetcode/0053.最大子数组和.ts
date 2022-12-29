@@ -12,7 +12,7 @@ function maxSubArray(nums: number[]): number {
   // 将舍弃后的值和原sum作比较 取最大值
 
   let ans: number = nums[0]
-  let sum: number = 0
+  let sum = 0
   for (const num of nums) {
     if (sum > 0) {
       sum += num
@@ -22,6 +22,5 @@ function maxSubArray(nums: number[]): number {
     ans = Math.max(sum, ans)
   }
   return ans
-};
+}
 // @lc code=end
-

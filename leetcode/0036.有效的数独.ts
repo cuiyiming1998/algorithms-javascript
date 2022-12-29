@@ -23,12 +23,13 @@ function isValidSudoku(board: string[][]): boolean {
       const num = board[i][j]
       if ('.' !== num) {
         const index: number = Number(num) - 1
-        rows[i][index] ++
-        columns[j][index] ++
-        subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index] ++
+        rows[i][index]++
+        columns[j][index]++
+        subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]++
         let row: number = rows[i][index]
         let col: number = columns[j][index]
-        let subbox: number = subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]
+        let subbox: number =
+          subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]
         if (row > 1 || col > 1 || subbox > 1) {
           return false
         }

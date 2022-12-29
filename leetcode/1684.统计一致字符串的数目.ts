@@ -10,9 +10,9 @@ function countConsistentStrings(allowed: string, words: string[]): number {
   for (const i of allowed) {
     set.add(i)
   }
-  let res: number = 0
+  let res = 0
   for (const word of words) {
-    let matched:boolean = true
+    let matched = true
 
     for (const c of word) {
       if (!set.has(c)) {
@@ -21,10 +21,9 @@ function countConsistentStrings(allowed: string, words: string[]): number {
       }
     }
     if (matched) {
-      res ++
+      res++
     }
   }
   return res
-};
+}
 // @lc code=end
-

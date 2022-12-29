@@ -34,6 +34,5 @@ function inorderTraversal(root: TreeNode | null): number[] {
   }
   inorder(root)
   return res
-};
+}
 // @lc code=end
-

@@ -10,13 +10,12 @@ function maxProfit(prices: number[]): number {
   //   return 0
   // }
   let minPrice: number = prices[0]
-  let profit: number = 0
+  let profit = 0
   for (const i of prices) {
     // 最低买入点
     minPrice = Math.min(i, minPrice)
     profit = Math.max(i - minPrice, profit)
   }
   return profit
-};
+}
 // @lc code=end
-

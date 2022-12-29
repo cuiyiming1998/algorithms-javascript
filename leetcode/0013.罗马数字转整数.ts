@@ -6,7 +6,7 @@
 
 // @lc code=start
 function romanToInt(s: string): number {
-  let ans: number = 0
+  let ans = 0
   const map = {
     I: 1,
     IV: 4,
@@ -20,7 +20,7 @@ function romanToInt(s: string): number {
     CD: 400,
     D: 500,
     CM: 900,
-    M: 1000,
+    M: 1000
   }
   let i = 0
   while (i < s.length) {
@@ -29,7 +29,7 @@ function romanToInt(s: string): number {
       i += 2
     } else {
       ans += map[s.substring(i, i + 1)]
-      i ++
+      i++
     }
   }
   return ans

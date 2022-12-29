@@ -5,8 +5,5 @@
  */
 
 // @lc code=start
-function pivotIndex(nums: number[]): number {
-
-};
+function pivotIndex(nums: number[]): number {}
 // @lc code=end
-

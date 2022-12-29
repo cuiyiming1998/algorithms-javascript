@@ -10,6 +10,5 @@ function isPowerOfThree(n: number): boolean {
     n = Math.floor(n / 3)
   }
   return 1 === n
-};
+}
 // @lc code=end
-

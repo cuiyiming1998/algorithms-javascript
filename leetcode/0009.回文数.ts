@@ -15,11 +15,9 @@ function isPalindrome(x: number): boolean {
   let reverseX = 0
   let rest = x
   while (rest >= 10) {
-    reverseX = (reverseX * 10) + (rest % 10)
+    reverseX = reverseX * 10 + (rest % 10)
     rest = Math.floor(rest / 10)
   }
-  return x === (reverseX * 10 + rest)
-};
+  return x === reverseX * 10 + rest
+}
 // @lc code=end
-
-

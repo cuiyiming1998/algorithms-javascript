@@ -17,7 +17,7 @@ function threeSum(nums: number[]): number[][] {
   }
   nums.sort((a, b) => a - b)
 
-  for (let i = 0; i < nums.length; i ++) {
+  for (let i = 0; i < nums.length; i++) {
     if (nums[i] > 0) {
       // 最小的数大于0 无论如何相加也无法得到0
       break
@@ -35,21 +35,20 @@ function threeSum(nums: number[]): number[][] {
         res.push([nums[i], nums[left], nums[right]])
         // 继续寻找
         while (left < right && nums[left] === nums[left + 1]) {
-          left ++
+          left++
         }
         while (left < right && nums[right] === nums[right - 1]) {
-          right --
+          right--
         }
-        left ++
-        right --
+        left++
+        right--
       } else if (answer > 0) {
-        right --
+        right--
       } else if (answer < 0) {
-        left ++
+        left++
       }
     }
   }
   return res
-};
+}
 // @lc code=end
-

@@ -24,8 +24,8 @@ function deepestLeavesSum(root: TreeNode | null): number {
   // 思路: dfs
   // 如果当前节点的level大于maxLevel, 则把sum重置为当前节点
   // 如果和maxLevel相同, 则 +val
-  let sum: number = 0
-  let maxLevel: number = 0
+  let sum = 0
+  let maxLevel = 0
   const dfs = (node: TreeNode | null, level: number) => {
     if (!node) {
       return
@@ -41,6 +41,5 @@ function deepestLeavesSum(root: TreeNode | null): number {
   }
   dfs(root, 0)
   return sum
-};
+}
 // @lc code=end
-

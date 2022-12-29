@@ -32,6 +32,5 @@ function deleteDuplicates(head: ListNode | null): ListNode | null {
     }
   }
   return head
-};
+}
 // @lc code=end
-

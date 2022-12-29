@@ -21,7 +21,7 @@
 function detectCycle(head: ListNode | null): ListNode | null {
   // 思路: set填充
   let set = new Set()
-  while(head !== null) {
+  while (head !== null) {
     if (set.has(head)) {
       return head
     }
@@ -29,6 +29,5 @@ function detectCycle(head: ListNode | null): ListNode | null {
     head = head.next
   }
   return null
-};
+}
 // @lc code=end
-

@@ -14,15 +14,14 @@ function isSubsequence(s: string, t: string): boolean {
   if (0 === s.length) {
     return true
   }
-  let sPos: number = 0
-  let tPos: number = 0
-  while(tPos < t.length && sPos < s.length) {
+  let sPos = 0
+  let tPos = 0
+  while (tPos < t.length && sPos < s.length) {
     if (s[sPos] === t[tPos]) {
-      sPos ++
+      sPos++
     }
-    tPos ++
+    tPos++
   }
   return sPos === s.length
-};
+}
 // @lc code=end
-

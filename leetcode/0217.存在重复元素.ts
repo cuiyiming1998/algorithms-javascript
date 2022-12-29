@@ -20,6 +20,5 @@ function containsDuplicate(nums: number[]): boolean {
     map.set(num, num)
   }
   return false
-};
+}
 // @lc code=end
-

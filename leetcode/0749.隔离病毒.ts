@@ -9,9 +9,9 @@ const dirs = [
   [-1, 0],
   [1, 0],
   [0, -1],
-  [0, 1],
+  [0, 1]
 ]
-var containVirus = function (isInfected) {
+let containVirus = function (isInfected) {
   // 思路: 真不会 复制的
   const m = isInfected.length,
     n = isInfected[0].length

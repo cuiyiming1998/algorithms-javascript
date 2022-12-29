@@ -1,5 +1,3 @@
-const arr = [10, 9, 8, 5, 4, 2, 1]
-
 /**
  * @description: 将arr[0]当做一个有序序列, 剩下的是未排序的序列
  * 从头到尾依次扫描未排序序列, 将扫描到的元素插入到有序序列的合适位置
@@ -27,5 +25,5 @@ export const insertionSort: Sort = {
       arr[preIndex + 1] = current
     }
     return arr
-  },
+  }
 }

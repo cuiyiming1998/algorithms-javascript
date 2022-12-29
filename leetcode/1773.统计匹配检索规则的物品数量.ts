@@ -5,22 +5,25 @@
  */
 
 // @lc code=start
-function countMatches(items: string[][], ruleKey: string, ruleValue: string): number {
+function countMatches(
+  items: string[][],
+  ruleKey: string,
+  ruleValue: string
+): number {
   // 思路: 用Map代替下标
   const map = {
     type: 0,
     color: 1,
     name: 2
   }
-  let res: number = 0
+  let res = 0
 
   for (const item of items) {
     if (item[map[ruleKey]] === ruleValue) {
-      res ++
+      res++
     }
   }
 
   return res
-};
+}
 // @lc code=end
-

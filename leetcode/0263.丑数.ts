@@ -20,6 +20,5 @@ function isUgly(n: number): boolean {
   }
 
   return 1 === n
-};
+}
 // @lc code=end
-

@@ -10,7 +10,7 @@ class WordFilter {
   // 维护一个map, 里面存储所有可能的前缀后缀的组合, 使用特殊字符进行连接, 作为key
   // 检索时使用相同的[ 前缀+特殊符号+后缀 ]的组合进行map.get
   private dict = new Map<string, number>()
-  private symbol: string = '#'
+  private symbol = '#'
   constructor(words: string[]) {
     for (let i = 0; i < words.length; i++) {
       const word = words[i]

@@ -34,6 +34,5 @@ function hasCycle(head: ListNode | null): boolean {
     fast = fast.next.next
   }
   return true
-};
+}
 // @lc code=end
-

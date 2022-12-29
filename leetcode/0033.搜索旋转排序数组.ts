@@ -5,8 +5,5 @@
  */
 
 // @lc code=start
-function search(nums: number[], target: number): number {
-
-};
+function search(nums: number[], target: number): number {}
 // @lc code=end
-

@@ -12,7 +12,7 @@ function canConstruct(ransomNote: string, magazine: string): boolean {
   // 构建map
   for (const i of magazine) {
     let num = map.get(i)
-    map.set(i, num ? ++num : num = 1)
+    map.set(i, num ? ++num : (num = 1))
   }
 
   for (const i of ransomNote) {
@@ -26,6 +26,5 @@ function canConstruct(ransomNote: string, magazine: string): boolean {
   }
 
   return res
-};
+}
 // @lc code=end
-

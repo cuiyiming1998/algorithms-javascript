@@ -35,6 +35,5 @@ function nextPermutation(nums: number[]): void {
       ;[nums[j], nums[l]] = [nums[l], nums[j]]
     }
   }
-
 }
 // @lc code=end

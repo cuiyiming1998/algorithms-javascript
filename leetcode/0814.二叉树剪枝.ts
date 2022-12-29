@@ -34,6 +34,5 @@ function pruneTree(root: TreeNode | null): TreeNode | null {
     return null
   }
   return root
-};
+}
 // @lc code=end
-

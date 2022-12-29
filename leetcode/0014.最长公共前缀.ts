@@ -6,15 +6,15 @@
 
 // @lc code=start
 function longestCommonPrefix(strs: string[]): string {
-  let ans: string = ''
+  let ans = ''
   if (strs.length <= 0) {
     return ans
   }
   let first: string = strs[0]
-  let i: number = 0
+  let i = 0
   for (; i < first.length; i++) {
-    let j: number = 0
-    let flag: boolean = true
+    let j = 0
+    let flag = true
     let str = first.charAt(i)
     while (j < strs.length) {
       if (strs[j][i] !== str) {
