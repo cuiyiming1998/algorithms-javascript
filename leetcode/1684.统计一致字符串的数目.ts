@@ -7,9 +7,9 @@
 // @lc code=start
 function countConsistentStrings(allowed: string, words: string[]): number {
   const set = new Set<string>()
-  for (const i of allowed) {
+  for (const i of allowed)
     set.add(i)
-  }
+
   let res = 0
   for (const word of words) {
     let matched = true

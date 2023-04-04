@@ -6,13 +6,13 @@
 
 // @lc code=start
 function longestPalindrome(s: string): string {
-  if (s.length < 2) {
+  if (s.length < 2)
     return s
-  }
+
   let res = ''
   for (let i = 0; i < s.length; i++) {
-    let s1 = judge(s, i, i)
-    let s2 = judge(s, i, i + 1)
+    const s1 = judge(s, i, i)
+    const s2 = judge(s, i, i + 1)
     res = res.length > s1.length ? res : s1
     res = res.length > s2.length ? res : s2
   }

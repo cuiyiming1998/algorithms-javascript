@@ -9,7 +9,7 @@ function getNext(num: number) {
   return num
     .toString()
     .split('')
-    .map((i) => Number(i) ** 2)
+    .map(i => Number(i) ** 2)
     .reduce((a, b) => a + b)
 }
 function isHappy(n: number): boolean {

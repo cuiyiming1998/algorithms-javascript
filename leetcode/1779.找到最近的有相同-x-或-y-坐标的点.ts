@@ -10,7 +10,7 @@ function nearestValidPoint(x: number, y: number, points: number[][]): number {
 
   let res = -1
   let distance = Infinity
-  let len: number = points.length
+  const len: number = points.length
 
   for (let i = 0; i < len; i++) {
     const current: number[] = points[i]
@@ -22,7 +22,8 @@ function nearestValidPoint(x: number, y: number, points: number[][]): number {
         distance = currentDist
         res = i
       }
-    } else if (y === currentY) {
+    }
+    else if (y === currentY) {
       const currentDist: number = Math.abs(x - currentX)
       if (distance > currentDist) {
         distance = currentDist

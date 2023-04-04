@@ -9,10 +9,10 @@ function lengthOfLastWord(s: string): number {
   // 思路: 从后往前遍历
   let index = s.length - 1
   let len = 0
-  while (' ' === s[index]) {
+  while (s[index] === ' ') {
     index--
   }
-  while (' ' !== s[index] && index >= 0) {
+  while (s[index] !== ' ' && index >= 0) {
     len++
     index--
   }

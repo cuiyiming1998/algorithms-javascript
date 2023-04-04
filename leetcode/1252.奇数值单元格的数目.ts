@@ -20,7 +20,7 @@ function oddCells(m: number, n: number, indices: number[][]): number {
   let res = 0
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
-      if (0 !== ((rows[i] + cols[j]) & 1)) {
+      if (((rows[i] + cols[j]) & 1) !== 0) {
         res++
       }
     }

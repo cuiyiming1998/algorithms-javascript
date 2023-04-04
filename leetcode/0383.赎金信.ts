@@ -6,7 +6,7 @@
 
 // @lc code=start
 function canConstruct(ransomNote: string, magazine: string): boolean {
-  let map = new Map<string, number>()
+  const map = new Map<string, number>()
   let res = true
 
   // 构建map
@@ -19,7 +19,8 @@ function canConstruct(ransomNote: string, magazine: string): boolean {
     let num = map.get(i)
     if (num && num > 0) {
       map.set(i, --num)
-    } else {
+    }
+    else {
       res = false
       break
     }

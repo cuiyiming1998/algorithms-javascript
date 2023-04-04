@@ -27,13 +27,14 @@ function deepestLeavesSum(root: TreeNode | null): number {
   let sum = 0
   let maxLevel = 0
   const dfs = (node: TreeNode | null, level: number) => {
-    if (!node) {
+    if (!node)
       return
-    }
+
     if (level > maxLevel) {
       sum = node.val
       maxLevel = level
-    } else if (level === maxLevel) {
+    }
+    else if (level === maxLevel) {
       sum += node.val
     }
     dfs(node.left, level + 1)

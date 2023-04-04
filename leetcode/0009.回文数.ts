@@ -6,12 +6,12 @@
 
 // @lc code=start
 function isPalindrome(x: number): boolean {
-  if (0 === x) {
+  if (x === 0)
     return true
-  }
-  if (x < 0 || 0 === x % 10) {
+
+  if (x < 0 || x % 10 === 0)
     return false
-  }
+
   let reverseX = 0
   let rest = x
   while (rest >= 10) {

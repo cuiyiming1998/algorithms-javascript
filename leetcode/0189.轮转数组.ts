@@ -21,7 +21,7 @@ function rotate(nums: number[], k: number): void {
   }
   function reverse(arr, left, right) {
     while (left < right) {
-      ;[arr[left], arr[right]] = [arr[right], arr[left]]
+      [arr[left], arr[right]] = [arr[right], arr[left]]
       left++
       right--
     }

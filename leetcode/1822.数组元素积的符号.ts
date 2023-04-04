@@ -25,13 +25,12 @@ function arraySign(nums: number[]): number {
   let res = false
 
   for (let i = 0; i < nums.length; i++) {
-    let n = nums[i]
-    if (!n) {
+    const n = nums[i]
+    if (!n)
       return 0
-    }
-    if (n < 0) {
+
+    if (n < 0)
       res = !res
-    }
   }
 
   return res ? -1 : 1

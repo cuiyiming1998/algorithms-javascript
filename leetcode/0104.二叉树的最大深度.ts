@@ -21,9 +21,9 @@
 
 // @ts-nocheck
 function maxDepth(root: TreeNode | null): number {
-  if (!root) {
+  if (!root)
     return 0
-  }
+
   const left: number = maxDepth(root.left)
   const right: number = maxDepth(root.right)
   return Math.max(left, right) + 1

@@ -7,24 +7,24 @@
 // @lc code=start
 function isValid(s: string): boolean {
   const len = s.length
-  if (1 === len % 2) {
+  if (len % 2 === 1)
     return false
-  }
 
   const map = new Map<string, string>([
     [')', '('],
     [']', '['],
-    ['}', '{']
+    ['}', '{'],
   ])
 
   const stack: string[] = []
   for (const i of s) {
     if (map.has(i)) {
-      if (!stack.length || stack[stack.length - 1] !== map.get(i)) {
+      if (!stack.length || stack[stack.length - 1] !== map.get(i))
         return false
-      }
+
       stack.pop()
-    } else {
+    }
+    else {
       stack.push(i)
     }
   }

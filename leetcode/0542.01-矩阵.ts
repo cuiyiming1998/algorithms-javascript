@@ -6,8 +6,8 @@
 
 // @lc code=start
 function updateMatrix(mat: number[][]): number[][] {
-  let map: number[][] = new Array(mat.length)
-  let queue: number[][] = []
+  const map: number[][] = new Array(mat.length)
+  const queue: number[][] = []
   for (let i = 0; i < mat.length; i++) {
     map[i] = new Array(mat[0].length).fill(Infinity)
     for (let j = 0; j < mat[0].length; j++) {
@@ -19,11 +19,11 @@ function updateMatrix(mat: number[][]): number[][] {
   }
   // 寻找0旁边的1
   while (queue.length) {
-    let size: number = queue.length
+    const size: number = queue.length
     for (let k = 0; k < size; k++) {
-      let arr = queue.shift()
+      const arr = queue.shift()
       if (arr) {
-        let [i, j] = arr
+        const [i, j] = arr
         if (i - 1 >= 0 && map[i - 1][j] > map[i][j] + 1) {
           map[i - 1][j] = map[i][j] + 1
           queue.push([i - 1, j])

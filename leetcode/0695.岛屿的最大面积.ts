@@ -10,9 +10,8 @@ function maxAreaOfIsland(grid: number[][]): number {
   let s = 0
 
   const dfs = (x: number, y: number): number => {
-    if (!grid[x] || !grid[x][y]) {
+    if (!grid[x] || !grid[x][y])
       return 0
-    }
 
     grid[x][y] = 0
     let sum = 1
@@ -26,9 +25,8 @@ function maxAreaOfIsland(grid: number[][]): number {
 
   for (let i = 0; i < grid.length; i++) {
     for (let j = 0; j < grid[i].length; j++) {
-      if (grid[i][j]) {
+      if (grid[i][j])
         s = Math.max(s, dfs(i, j))
-      }
     }
   }
   return s

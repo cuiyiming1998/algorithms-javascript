@@ -7,20 +7,20 @@
 // @lc code=start
 function reverseWords(s: string): string {
   // 思路: 双指针
-  let wordsArr: string[] = s.split(' ')
+  const wordsArr: string[] = s.split(' ')
 
   const reverse = (arr: string[]): string[] => {
     let left = 0
     let right: number = arr.length - 1
     while (left <= right) {
-      ;[arr[left], arr[right]] = [arr[right], arr[left]]
+      [arr[left], arr[right]] = [arr[right], arr[left]]
       left++
       right--
     }
     return arr
   }
 
-  let res = wordsArr.map((item) => {
+  const res = wordsArr.map((item) => {
     return reverse(item.split('')).join('')
   })
 

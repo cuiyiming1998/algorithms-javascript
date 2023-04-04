@@ -12,13 +12,12 @@ function searchInsert(nums: number[], target: number): number {
   while (left <= right) {
     const mid = Math.floor(left + (right - left) / 2)
     const midNum = nums[mid]
-    if (target === midNum) {
+    if (target === midNum)
       return mid
-    } else if (target > midNum) {
+    else if (target > midNum)
       left = mid + 1
-    } else if (target < midNum) {
+    else if (target < midNum)
       right = mid - 1
-    }
   }
   return left
 }

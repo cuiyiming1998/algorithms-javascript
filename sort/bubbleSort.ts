@@ -14,5 +14,5 @@ export const bubbleSort: Sort = {
       }
     }
     return arr
-  }
+  },
 }

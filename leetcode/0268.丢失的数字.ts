@@ -8,11 +8,10 @@
 function missingNumber(nums: number[]): number {
   // 思路: set
 
-  let set = new Set<number>()
+  const set = new Set<number>()
   const n: number = nums.length
-  for (let i = 0; i < n; i++) {
+  for (let i = 0; i < n; i++)
     set.add(nums[i])
-  }
 
   let res = -1
   for (let i = 0; i <= n; i++) {

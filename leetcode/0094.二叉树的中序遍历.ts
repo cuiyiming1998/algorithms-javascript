@@ -23,11 +23,11 @@
 function inorderTraversal(root: TreeNode | null): number[] {
   // 思路: 递归
   // 中序 left -> root -> right
-  let res: number[] = []
+  const res: number[] = []
   const inorder = (root) => {
-    if (!root) {
+    if (!root)
       return
-    }
+
     inorder(root.left)
     res.push(root.val)
     inorder(root.right)

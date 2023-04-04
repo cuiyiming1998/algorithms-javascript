@@ -20,16 +20,15 @@
 // @ts-nocheck
 function preorder(root: Node | null): number[] {
   // 思路: 递归
-  let res: number[] = []
+  const res: number[] = []
 
   const helper = (node: Node) => {
-    if (!node || null === node?.val) {
+    if (!node || node?.val === null)
       return
-    }
+
     res.push(node.val)
-    for (const child of node.children) {
+    for (const child of node.children)
       helper(child)
-    }
   }
 
   helper(root)

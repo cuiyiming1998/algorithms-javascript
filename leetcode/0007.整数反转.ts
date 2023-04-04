@@ -13,9 +13,9 @@ function reverse(x: number): number {
     res = res * 10 + (num % 10)
     num = Math.floor(num / 10)
   }
-  if (res > border || res < -border) {
+  if (res > border || res < -border)
     return 0
-  }
+
   return x > 0 ? res : -res
 }
 // @lc code=end

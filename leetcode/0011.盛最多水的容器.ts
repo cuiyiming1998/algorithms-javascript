@@ -14,7 +14,8 @@ function maxArea(height: number[]): number {
   while (left < right) {
     if (height[left] < height[right]) {
       left++
-    } else {
+    }
+    else {
       right--
     }
     s = Math.max(s, Math.min(height[left], height[right]) * (right - left))

@@ -18,14 +18,13 @@ function search(nums: number[], target: number): number {
     // 这里可以使用 (left + right) / 2
     // 或者 (left + right) >> 1 这种运算好像比上面快
     const mid = Math.floor((right - left) / 2) + left
-    let num = nums[mid]
-    if (num === target) {
+    const num = nums[mid]
+    if (num === target)
       return mid
-    } else if (num > target) {
+    else if (num > target)
       right = mid - 1
-    } else if (num < target) {
+    else if (num < target)
       left = mid + 1
-    }
   }
   return -1
 }

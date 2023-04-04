@@ -17,10 +17,10 @@ class OrderedStream {
 
   insert(idKey: number, value: string): string[] {
     this.data[--idKey] = value
-    let res: string[] = []
-    while (this.ptr < this.data.length && this.data[this.ptr]) {
+    const res: string[] = []
+    while (this.ptr < this.data.length && this.data[this.ptr])
       res.push(this.data[this.ptr++])
-    }
+
     return res
   }
 }

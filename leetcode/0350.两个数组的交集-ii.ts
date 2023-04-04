@@ -9,8 +9,8 @@ function intersect(nums1: number[], nums2: number[]): number[] {
   // 思路: map
   // 使用map存储nums1中值出现的次数
   // 循环nums2在map中寻找, 如果找到 -> 次数 - 1 push到res中
-  let res: number[] = []
-  let map = new Map<number, number>()
+  const res: number[] = []
+  const map = new Map<number, number>()
   // 1. 构建map
   for (const num of nums1) {
     let cur: number | undefined = map.get(num)

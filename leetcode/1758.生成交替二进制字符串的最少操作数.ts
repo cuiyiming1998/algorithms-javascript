@@ -15,9 +15,10 @@ function minOperations(s: string): number {
   //  11010111
   for (let i = 0; i < s.length; i++) {
     if (i & 1) {
-      '0' === s[i] ? count1++ : count2++
-    } else {
-      '1' === s[i] ? count1++ : count2++
+      s[i] === '0' ? count1++ : count2++
+    }
+    else {
+      s[i] === '1' ? count1++ : count2++
     }
   }
 

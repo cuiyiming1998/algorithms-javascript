@@ -8,13 +8,13 @@
 function countMatches(
   items: string[][],
   ruleKey: string,
-  ruleValue: string
+  ruleValue: string,
 ): number {
   // 思路: 用Map代替下标
   const map = {
     type: 0,
     color: 1,
-    name: 2
+    name: 2,
   }
   let res = 0
 

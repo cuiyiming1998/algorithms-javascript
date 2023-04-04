@@ -15,7 +15,7 @@ function nextPermutation(nums: number[]): void {
   // 然后从后往前找比nums[i]要大的数, 交换两个值
   // 对nums[i]后的数字进行排序(从小到大, 后面的值前面已经判断过了是递减的, 只需要两两交换)
   // 需要优化时间和空间
-  let len: number = nums.length
+  const len: number = nums.length
   let i: number = len - 2
   let j: number = len - 1
   let k: number = len - 1
@@ -26,14 +26,14 @@ function nextPermutation(nums: number[]): void {
   if (i < 0) {
     // 如果是递减的
     nums.reverse()
-  } else {
+  }
+  else {
     while (nums[k] <= nums[i]) {
       k--
     }
-    ;[nums[k], nums[i]] = [nums[i], nums[k]]
-    for (let l = nums.length - 1; j < l; ++j, --l) {
-      ;[nums[j], nums[l]] = [nums[l], nums[j]]
-    }
+    [nums[k], nums[i]] = [nums[i], nums[k]]
+    for (let l = nums.length - 1; j < l; ++j, --l)
+      [nums[j], nums[l]] = [nums[l], nums[j]]
   }
 }
 // @lc code=end

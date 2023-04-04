@@ -9,23 +9,22 @@ function majorityElement(nums: number[]): number {
   // 思路: 遍历nums
   // 使用map存储每个数字出现的次数
   // 如果发现大于nums / 2 直接返回
-  let map = new Map<number, number>()
+  const map = new Map<number, number>()
   const count: number = nums.length / 2
   let res = 0
 
-  if (nums.length < 2) {
+  if (nums.length < 2)
     return nums[0]
-  }
 
-  for (let num of nums) {
+  for (const num of nums) {
     let key = map.get(num)
     if (undefined !== key) {
       map.set(num, key + 1)
       key = map.get(num) as number
-      if (key > count) {
+      if (key > count)
         res = num
-      }
-    } else {
+    }
+    else {
       map.set(num, 1)
     }
   }

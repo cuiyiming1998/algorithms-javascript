@@ -23,27 +23,28 @@
 
 // @ts-nocheck
 function connect(root: Node | null): Node | null {
-  if (!root) {
+  if (!root)
     return root
-  }
-  let queue = [root]
+
+  const queue = [root]
 
   while (queue.length > 0) {
     let size = queue.length
     while (size > 0) {
       size--
-      let offer = queue.shift()
+      const offer = queue.shift()
 
       if (offer) {
-        if (size === 0) {
+        if (size === 0)
           offer.next = null
-        } else {
+        else
           offer.next = queue[0]
-        }
       }
 
-      if (offer && offer.left) queue.push(offer.left)
-      if (offer && offer.right) queue.push(offer.right)
+      if (offer && offer.left)
+        queue.push(offer.left)
+      if (offer && offer.right)
+        queue.push(offer.right)
     }
   }
 

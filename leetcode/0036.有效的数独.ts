@@ -21,18 +21,17 @@ function isValidSudoku(board: string[][]): boolean {
   for (let i = 0; i < 9; i++) {
     for (let j = 0; j < 9; j++) {
       const num = board[i][j]
-      if ('.' !== num) {
+      if (num !== '.') {
         const index: number = Number(num) - 1
         rows[i][index]++
         columns[j][index]++
         subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]++
-        let row: number = rows[i][index]
-        let col: number = columns[j][index]
-        let subbox: number =
-          subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]
-        if (row > 1 || col > 1 || subbox > 1) {
+        const row: number = rows[i][index]
+        const col: number = columns[j][index]
+        const subbox: number
+          = subboxes[Math.floor(i / 3)][Math.floor(j / 3)][index]
+        if (row > 1 || col > 1 || subbox > 1)
           return false
-        }
       }
     }
   }

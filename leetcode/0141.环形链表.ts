@@ -21,15 +21,15 @@
 function hasCycle(head: ListNode | null): boolean {
   // 思路: 快慢指针
   // 如果是一个环的话 快慢针总会相遇
-  if (!head || !head.next) {
+  if (!head || !head.next)
     return false
-  }
+
   let slow: ListNode = head
   let fast: ListNode = head.next
   while (slow !== fast) {
-    if (null === fast.next || null === fast.next.next) {
+    if (fast.next === null || fast.next.next === null)
       return false
-    }
+
     slow = slow.next
     fast = fast.next.next
   }

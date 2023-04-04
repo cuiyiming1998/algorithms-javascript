@@ -13,18 +13,18 @@ function shiftGrid(grid: number[][], k: number): number[][] {
   // 在网格的位置为
   const m: number = grid.length
   const n: number = grid[0].length
-  let res: number[][] = []
+  const res: number[][] = []
   for (let i = 0; i < m; i++) {
-    let row: number[] = []
-    for (let j = 0; j < n; j++) {
+    const row: number[] = []
+    for (let j = 0; j < n; j++)
       row.push(0)
-    }
+
     res.push(row)
   }
 
   for (let i = 0; i < m; i++) {
     for (let j = 0; j < n; j++) {
-      let index = (i * n + j + k) % (m * n)
+      const index = (i * n + j + k) % (m * n)
       res[Math.floor(index / n)].splice(index % n, 1, grid[i][j])
     }
   }

@@ -18,9 +18,8 @@ function countEven(num: number): number {
       x = Math.floor(x / 10)
     }
 
-    if (sum % 2 === 0) {
+    if (sum % 2 === 0)
       res += 1
-    }
   }
 
   return res

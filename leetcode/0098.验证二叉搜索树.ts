@@ -20,13 +20,13 @@
  */
 
 // @ts-nocheck
-const helper = (node: TreeNode, min: number, max: number): boolean => {
-  if (!node) {
+function helper(node: TreeNode, min: number, max: number): boolean {
+  if (!node)
     return true
-  }
-  if (node.val >= max || node.val <= min) {
+
+  if (node.val >= max || node.val <= min)
     return false
-  }
+
   return helper(node.left, min, node.val) && helper(node.right, node.val, max)
 }
 function isValidBST(root: TreeNode | null): boolean {

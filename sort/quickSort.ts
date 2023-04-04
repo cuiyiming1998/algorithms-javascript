@@ -10,23 +10,22 @@ export const quickSort: Sort = {
   timeMin: 'O(nlogn)',
   timeMinDesc: '平均',
   fn: (arr: number[]) => {
-    if (arr.length < 1) {
+    if (arr.length < 1)
       return arr
-    }
+
     // 取基准数
     const priorIndex = Math.floor(arr.length / 2)
     // 切割数组
     const prior = arr.splice(priorIndex, 1)[0]
     // 遍历, 比较
-    let left: number[] = []
-    let right: number[] = []
+    const left: number[] = []
+    const right: number[] = []
     for (let i = 0; i < arr.length; i++) {
-      if (arr[i] < prior) {
+      if (arr[i] < prior)
         left.push(arr[i])
-      } else {
+      else
         right.push(arr[i])
-      }
     }
     return quickSort.fn(left).concat([prior], quickSort.fn(right))
-  }
+  },
 }

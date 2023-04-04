@@ -6,16 +6,15 @@
 
 // @lc code=start
 function twoSum(nums: number[], target: number): number[] {
-  let targetMap = new Map()
+  const targetMap = new Map()
   for (let i = 0; i < nums.length; i++) {
-    let current = nums[i]
-    let targetNum = target - current
-    let targetIndex = targetMap.get(targetNum)
-    if (targetIndex === undefined) {
+    const current = nums[i]
+    const targetNum = target - current
+    const targetIndex = targetMap.get(targetNum)
+    if (targetIndex === undefined)
       targetMap.set(current, i)
-    } else {
+    else
       return [targetIndex, i]
-    }
   }
   return []
 }

@@ -22,12 +22,12 @@ function isPalindrome(head: ListNode | null): boolean {
   // 思路: 遍历一遍链表 把值存在数组中
   // 然后再双指针判断一下
   // TODO: 可以优化为快慢指针
-  let values: number[] = []
-  if (!head) {
+  const values: number[] = []
+  if (!head)
     return true
-  }
+
   let node: ListNode = head
-  while (null !== node) {
+  while (node !== null) {
     values.push(node.val)
     node = node.next
   }
@@ -37,7 +37,8 @@ function isPalindrome(head: ListNode | null): boolean {
     if (values[left] === values[right]) {
       left++
       right--
-    } else {
+    }
+    else {
       return false
     }
   }

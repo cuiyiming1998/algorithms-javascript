@@ -19,12 +19,11 @@
 
 // @ts-nocheck
 function postorder(root: Node | null): number[] {
-  let res: number[] = []
+  const res: number[] = []
 
   const order = (root: Node | null) => {
-    if (!root) {
+    if (!root)
       return
-    }
 
     if (root.children.length) {
       root.children.map((node) => {

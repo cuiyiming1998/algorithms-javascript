@@ -1,9 +1,19 @@
 {
   "name": "algorithms-javascript",
+  "type": "module",
   "version": "1.0.0",
   "description": "手写一些经典算法、排序",
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/cuiyiming1998/algorithms-javascript#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuiyiming1998/algorithms-javascript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cuiyiming1998/algorithms-javascript/issues"
+  },
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "vitest daily-js/",
     "test:ui": "vitest --ui",
@@ -12,35 +22,26 @@
     "lint:leetcode": "eslint ./leetcode --ext .js,.ts,.jsx,.tsx --fix --quiet",
     "lint:all": "eslint . --ext .js,.ts,.jsx,.tsx --fix --quiet"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cuiyiming1998/algorithms-javascript.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cuiyiming1998/algorithms-javascript/issues"
-  },
-  "homepage": "https://github.com/cuiyiming1998/algorithms-javascript#readme",
   "devDependencies": {
+    "@antfu/eslint-config": "^0.38.4",
     "@types/node": "^18.8.5",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
     "@vitest/ui": "^0.18.0",
-    "lodash-es": "^4.17.21",
-    "ts-node": "^10.9.1",
-    "tslib": "^2.4.0",
-    "typescript": "~4.2.3",
-    "vitest": "^0.18.0",
+    "commitlint": "^17.3.0",
+    "commitlint-config-cz": "^0.13.3",
+    "commitlint-config-git-commit-emoji": "^1.0.0",
+    "cz-customizable": "^7.0.0",
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.1",
-    "commitlint": "^17.3.0",
-    "cz-customizable": "^7.0.0",
-    "commitlint-config-cz": "^0.13.3",
-    "commitlint-config-git-commit-emoji": "^1.0.0",
     "husky": "^8.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0"
+    "lodash-es": "^4.17.21",
+    "prettier": "^2.8.1",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.4.0",
+    "typescript": "~4.2.3",
+    "vitest": "^0.18.0"
   },
   "config": {
     "commitizen": {

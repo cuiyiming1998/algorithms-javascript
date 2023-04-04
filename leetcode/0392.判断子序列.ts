@@ -11,9 +11,9 @@ function isSubsequence(s: string, t: string): boolean {
   // 不匹配 t指针++
   // 判断最后s指针和s的长度相同
 
-  if (0 === s.length) {
+  if (s.length === 0)
     return true
-  }
+
   let sPos = 0
   let tPos = 0
   while (tPos < t.length && sPos < s.length) {

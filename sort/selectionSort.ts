@@ -9,13 +9,12 @@ export const selectionSort: Sort = {
     for (let i = 0; i < arr.length; i++) {
       let minIndex = i
       for (let j = i + 1; j < arr.length; j++) {
-        if (arr[j] < arr[minIndex]) {
+        if (arr[j] < arr[minIndex])
           minIndex = j
-        }
       }
       // 交换最小值
-      ;[arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
+      [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]]
     }
     return arr
-  }
+  },
 }

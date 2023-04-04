@@ -28,49 +28,51 @@
 function intersect(t1: Node | null, t2: Node | null): Node | null {
   // 抄的题解
   if (t1.isLeaf && t2.isLeaf) {
-    if (t1.val) return t1
-    else if (t2.val) return t2
+    if (t1.val)
+      return t1
+    else if (t2.val)
+      return t2
     else return t1
   }
   const ans: Node = new Node()
   ans.topLeft = intersect(
     t1.isLeaf ? t1 : t1.topLeft,
-    t2.isLeaf ? t2 : t2.topLeft
+    t2.isLeaf ? t2 : t2.topLeft,
   )
   ans.topRight = intersect(
     t1.isLeaf ? t1 : t1.topRight,
-    t2.isLeaf ? t2 : t2.topRight
+    t2.isLeaf ? t2 : t2.topRight,
   )
   ans.bottomLeft = intersect(
     t1.isLeaf ? t1 : t1.bottomLeft,
-    t2.isLeaf ? t2 : t2.bottomLeft
+    t2.isLeaf ? t2 : t2.bottomLeft,
   )
   ans.bottomRight = intersect(
     t1.isLeaf ? t1 : t1.bottomRight,
-    t2.isLeaf ? t2 : t2.bottomRight
+    t2.isLeaf ? t2 : t2.bottomRight,
   )
-  const a: boolean =
-    ans.topLeft.isLeaf &&
-    ans.topRight.isLeaf &&
-    ans.bottomLeft.isLeaf &&
-    ans.bottomRight.isLeaf
-  const b: boolean =
-    ans.topLeft.val &&
-    ans.topRight.val &&
-    ans.bottomLeft.val &&
-    ans.bottomRight.val
-  const c: boolean =
-    ans.topLeft.val ||
-    ans.topRight.val ||
-    ans.bottomLeft.val ||
-    ans.bottomRight.val
+  const a: boolean
+    = ans.topLeft.isLeaf
+    && ans.topRight.isLeaf
+    && ans.bottomLeft.isLeaf
+    && ans.bottomRight.isLeaf
+  const b: boolean
+    = ans.topLeft.val
+    && ans.topRight.val
+    && ans.bottomLeft.val
+    && ans.bottomRight.val
+  const c: boolean
+    = ans.topLeft.val
+    || ans.topRight.val
+    || ans.bottomLeft.val
+    || ans.bottomRight.val
 
   ans.isLeaf = a && (b || !c)
   ans.val = ans.topLeft.val
 
-  if (ans.isLeaf) {
+  if (ans.isLeaf)
     ans.topLeft = ans.topRight = ans.bottomLeft = ans.bottomRight = null
-  }
+
   return ans
 }
 // @lc code=end

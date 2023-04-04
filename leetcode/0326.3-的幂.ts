@@ -6,9 +6,9 @@
 
 // @lc code=start
 function isPowerOfThree(n: number): boolean {
-  while (n !== 0 && n % 3 == 0) {
+  while (n !== 0 && n % 3 == 0)
     n = Math.floor(n / 3)
-  }
-  return 1 === n
+
+  return n === 1
 }
 // @lc code=end

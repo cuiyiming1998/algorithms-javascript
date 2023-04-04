@@ -21,10 +21,10 @@ class StockSpanner {
 
   next(price: number): number {
     this.day++
-    while (price >= this.stack[this.stack.length - 1][1]) {
+    while (price >= this.stack[this.stack.length - 1][1])
       this.stack.pop()
-    }
-    let res = this.day - this.stack[this.stack.length - 1][0]
+
+    const res = this.day - this.stack[this.stack.length - 1][0]
     this.stack.push([this.day, price])
     return res
   }

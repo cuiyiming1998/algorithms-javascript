@@ -24,18 +24,17 @@ function isSymmetric(root: TreeNode | null): boolean {
   return check(root, root)
 }
 
-const check = (left: TreeNode | null, right: TreeNode | null): boolean => {
-  if (!left && !right) {
+function check(left: TreeNode | null, right: TreeNode | null): boolean {
+  if (!left && !right)
     return true
-  }
-  if (!left || !right) {
+
+  if (!left || !right)
     return false
-  }
 
   return (
-    left.val === right.val &&
-    check(left.left, right.right) &&
-    check(left.right, right.left)
+    left.val === right.val
+    && check(left.left, right.right)
+    && check(left.right, right.left)
   )
 }
 // @lc code=end

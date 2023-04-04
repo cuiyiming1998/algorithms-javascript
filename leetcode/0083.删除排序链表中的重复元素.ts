@@ -19,17 +19,15 @@
 
 // @ts-nocheck
 function deleteDuplicates(head: ListNode | null): ListNode | null {
-  if (!head) {
+  if (!head)
     return head
-  }
 
   let cur = head
   while (cur.next) {
-    if (cur.val === cur.next.val) {
+    if (cur.val === cur.next.val)
       cur.next = cur.next.next
-    } else {
+    else
       cur = cur.next
-    }
   }
   return head
 }

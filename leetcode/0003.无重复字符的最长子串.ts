@@ -6,16 +6,17 @@
 
 // @lc code=start
 function lengthOfLongestSubstring(s: string): number {
-  let len = s.length
+  const len = s.length
   let maxLength = 0
-  let set = new Set()
+  const set = new Set()
   let j = 0
   for (let i = 0; i < len; i++) {
     if (!set.has(s[i])) {
       // 如果没有
       set.add(s[i])
       maxLength = Math.max(maxLength, set.size)
-    } else {
+    }
+    else {
       // 如果有，则删除
       while (set.has(s[i])) {
         set.delete(s[j])

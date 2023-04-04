@@ -11,7 +11,7 @@ export const insertionSort: Sort = {
   timeMin: 'O(n)',
   timeMinDesc: '序列本身就有序',
   fn: (arr) => {
-    console.log(`时间复杂度(平均) O(nlogn)`)
+    console.log('时间复杂度(平均) O(nlogn)')
     const len = arr.length
     let preIndex, current
     for (let i = 1; i < len; i++) {
@@ -25,5 +25,5 @@ export const insertionSort: Sort = {
       arr[preIndex + 1] = current
     }
     return arr
-  }
+  },
 }

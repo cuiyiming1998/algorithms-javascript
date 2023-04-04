@@ -17,7 +17,7 @@ class WordFilter {
       const len = word.length
       for (let prefixIndex = 1; prefixIndex <= len; prefixIndex++) {
         for (let suffixIndex = 1; suffixIndex <= len; suffixIndex++) {
-          let key = `${word.substring(0, prefixIndex)}${
+          const key = `${word.substring(0, prefixIndex)}${
             this.symbol
           }${word.substring(len - suffixIndex)}`
           this.dict.set(key, i)

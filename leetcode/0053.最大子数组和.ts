@@ -14,11 +14,11 @@ function maxSubArray(nums: number[]): number {
   let ans: number = nums[0]
   let sum = 0
   for (const num of nums) {
-    if (sum > 0) {
+    if (sum > 0)
       sum += num
-    } else {
+    else
       sum = num
-    }
+
     ans = Math.max(sum, ans)
   }
   return ans

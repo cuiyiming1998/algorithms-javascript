@@ -12,11 +12,11 @@ function containsDuplicate(nums: number[]): boolean {
 
   // return new Set(nums).size < nums.length;
 
-  let map = new Map<number, number>()
+  const map = new Map<number, number>()
   for (const num of nums) {
-    if (map.has(num)) {
+    if (map.has(num))
       return true
-    }
+
     map.set(num, num)
   }
   return false

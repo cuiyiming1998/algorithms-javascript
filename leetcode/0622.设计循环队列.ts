@@ -19,9 +19,9 @@ class MyCircularQueue {
 
   enQueue(value: number): boolean {
     // 在[end % len]处存入值 队尾后移一位
-    if (this.isFull()) {
+    if (this.isFull())
       return false
-    }
+
     this.queue[this.end % this.len] = value
     this.end++
     return true
@@ -29,9 +29,9 @@ class MyCircularQueue {
 
   deQueue(): boolean {
     // 队头向后移一位
-    if (this.isEmpty()) {
+    if (this.isEmpty())
       return false
-    }
+
     this.start++
     return true
   }

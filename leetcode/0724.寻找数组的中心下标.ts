@@ -13,14 +13,14 @@ function pivotIndex(nums: number[]): number {
   // 据题意可知左右元素相等
   // sum = total - nums[i] - sum
   // 2 * sum + nums[i] = total
-  let res = -1
+  const res = -1
   const total = nums.reduce((a, b) => a + b, 0)
   let sum = 0
 
   for (let i = 0; i < nums.length; i++) {
-    if (2 * sum + nums[i] === total) {
+    if (2 * sum + nums[i] === total)
       return i
-    }
+
     sum += nums[i]
   }
   return -1

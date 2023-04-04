@@ -11,10 +11,10 @@ function threeSum(nums: number[]): number[][] {
   // nums[i]后面的元素设置left和right
   // 小于0 -> left ++  大于0 -> right --
   // 三数相加等于0 就是结果
-  let res: number[][] = []
-  if (nums.length < 3) {
+  const res: number[][] = []
+  if (nums.length < 3)
     return res
-  }
+
   nums.sort((a, b) => a - b)
 
   for (let i = 0; i < nums.length; i++) {
@@ -29,8 +29,8 @@ function threeSum(nums: number[]): number[][] {
     let left = i + 1
     let right = nums.length - 1
     while (left < right) {
-      let answer = nums[i] + nums[left] + nums[right]
-      if (0 === answer) {
+      const answer = nums[i] + nums[left] + nums[right]
+      if (answer === 0) {
         // 得到结果, 添加进res
         res.push([nums[i], nums[left], nums[right]])
         // 继续寻找
@@ -42,9 +42,11 @@ function threeSum(nums: number[]): number[][] {
         }
         left++
         right--
-      } else if (answer > 0) {
+      }
+      else if (answer > 0) {
         right--
-      } else if (answer < 0) {
+      }
+      else if (answer < 0) {
         left++
       }
     }

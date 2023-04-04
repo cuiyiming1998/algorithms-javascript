@@ -20,14 +20,15 @@ function romanToInt(s: string): number {
     CD: 400,
     D: 500,
     CM: 900,
-    M: 1000
+    M: 1000,
   }
   let i = 0
   while (i < s.length) {
     if (i + 1 < s.length && map[s.substring(i, i + 2)]) {
       ans += map[s.substring(i, i + 2)]
       i += 2
-    } else {
+    }
+    else {
       ans += map[s.substring(i, i + 1)]
       i++
     }

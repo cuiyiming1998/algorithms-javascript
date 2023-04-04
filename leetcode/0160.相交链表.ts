@@ -20,12 +20,12 @@
 // @ts-nocheck
 function getIntersectionNode(
   headA: ListNode | null,
-  headB: ListNode | null
+  headB: ListNode | null,
 ): ListNode | null {
   // 思路: 使用set
   // 循环A 存入set
   // 循环B 看是否存在set中
-  let set: Set<ListNode> = new Set()
+  const set: Set<ListNode> = new Set()
   let a: ListNode | null = headA
   let b: ListNode | null = headB
   while (a) {
@@ -33,9 +33,9 @@ function getIntersectionNode(
     a = a.next
   }
   while (b) {
-    if (set.has(b)) {
+    if (set.has(b))
       return b
-    }
+
     b = b.next
   }
   return null
