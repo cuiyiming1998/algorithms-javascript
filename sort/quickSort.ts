@@ -29,3 +29,9 @@ export const quickSort: Sort = {
     return quickSort.fn(left).concat([prior], quickSort.fn(right))
   },
 }
+
+function a() {
+
+}
+
+a()

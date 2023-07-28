@@ -1,7 +1,13 @@
 {
-  "extends": "@antfu",
+  "extends": [
+    "@antfu"
+  ],
   "rules": {
+    "no-console": "off",
     "@typescript-eslint/ban-ts-comment": "off",
-    "no-console": "off"
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "vue/no-irregular-whitespace": "off",
+    "no-irregular-whitespace": "off"
   }
 }
