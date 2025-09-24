@@ -61,15 +61,15 @@
  * @param {string} brokenLetters
  * @return {number}
  */
-var canBeTypedWords = function(text, brokenLetters) {
-    const words = text.split(' ')
-    const brokenLettersArr = brokenLetters.split('')
-    let result = 0
-    words.map(word => {
-      if (!brokenLettersArr.some(letter => word.includes(letter))) {
-        result++
-      }
-    })
-    return result
+var canBeTypedWords = function (text, brokenLetters) {
+  const words = text.split(' ')
+  const brokenLettersArr = brokenLetters.split('')
+  let result = 0
+  words.map((word) => {
+    if (!brokenLettersArr.some(letter => word.includes(letter))) {
+      result++
+    }
+  })
+  return result
 };
 // @lc code=end

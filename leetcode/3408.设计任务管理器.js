@@ -100,7 +100,6 @@ var TaskManager = function (tasks) {
     this.taskInfo.set(taskId, [priority, userId])
     this.heap.enqueue([priority, taskId])
   }
-
 };
 
 /** 

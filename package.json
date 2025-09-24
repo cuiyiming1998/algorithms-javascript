@@ -19,20 +19,21 @@
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "commit": "git add . && cz-customizable",
-    "lint:leetcode": "eslint ./leetcode --ext .js,.ts,.jsx,.tsx --fix --quiet",
-    "lint:all": "eslint . --ext .js,.ts,.jsx,.tsx --fix --quiet"
+    "lint:leetcode": "eslint ./leetcode --fix --quiet",
+    "lint:all": "eslint . --fix --quiet"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.4",
+    "@antfu/eslint-config": "^0.38.6",
+    "@eslint/js": "^9.36.0",
     "@types/node": "^18.8.5",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
     "@vitest/ui": "^0.18.0",
     "commitlint": "^17.3.0",
     "commitlint-config-cz": "^0.13.3",
     "commitlint-config-git-commit-emoji": "^1.0.0",
     "cz-customizable": "^7.0.0",
-    "eslint": "^8.30.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.2",
@@ -40,7 +41,7 @@
     "prettier": "^2.8.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.4.0",
-    "typescript": "~4.2.3",
+    "typescript": "~5.9.2",
     "vitest": "^0.18.0"
   },
   "config": {
