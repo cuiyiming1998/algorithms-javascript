@@ -77,7 +77,7 @@ const fractionToDecimal = function (numerator, denominator) {
   numerator = Math.abs(numerator)
   denominator = Math.abs(denominator)
   const integer = Math.floor(numerator / denominator)
-  result.push( integer.toString())
+  result.push(integer.toString())
   result.push('.')
 
   // 小数部分

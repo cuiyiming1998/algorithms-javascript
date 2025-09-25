@@ -46,7 +46,7 @@ export default [
       ...js.configs.recommended.rules,
       'no-console': 'off',
       'indent': ['error', 2],
-      'semi': ['warn', 'never'],
+      'semi': ['error', 'never'],
       'no-irregular-whitespace': 'off',
       'no-trailing-spaces': 'warn',
       'curly': 'off',
@@ -57,7 +57,7 @@ export default [
       'no-undef': 'warn',
       'no-tabs': 'warn',
       'no-unused-vars': 'warn',
-      'no-constant-condition': 'warn'
+      'no-constant-condition': 'off'
     }
   },
 
