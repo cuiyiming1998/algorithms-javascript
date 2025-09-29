@@ -75,14 +75,18 @@
 let minScoreTriangulation = function(values) {
   const n = values.length
   const memo = new Map()
-  
+
   function dp(i, j) {
     // 基础情况：区间长度小于3，无法形成三角形
-    if (j - i < 2) return 0
-    
+    if (j - i < 2) {
+      return 0
+    }
+
     const key = `${i}-${j}`
-    if (memo.has(key)) return memo.get(key)
-    
+    if (memo.has(key)) {
+      return memo.get(key)
+    }
+
     let result = Infinity
     // 枚举中间点k，将多边形分成两部分
     for (let k = i + 1; k < j; k++) {
@@ -90,11 +94,11 @@ let minScoreTriangulation = function(values) {
       const score = values[i] * values[k] * values[j] + dp(i, k) + dp(k, j)
       result = Math.min(result, score)
     }
-    
+
     memo.set(key, result)
     return result
   }
-  
+
   return dp(0, n - 1)
 }
 // @lc code=end
